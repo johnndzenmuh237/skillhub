@@ -35,6 +35,7 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+body.menu-open{overflow:hidden;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;}
 ul{list-style:none;}
@@ -656,9 +657,10 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
     <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
-    <a href="blog.html" class="btn-ghost" style="display:none" id="navFree"><i class="fas fa-gift"></i>Free Resources</a>
     <a href="blog.html" class="btn-primary"><i class="fas fa-gift"></i>Free Resources</a>
-    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="fas fa-bars"></i>
+    </button>
   </div>
 </nav>
 
@@ -1128,16 +1130,34 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
 // Mobile nav toggle
 const menuToggle = document.getElementById('menuToggle');
 const navLinks = document.getElementById('navLinks');
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  menuToggle.querySelector('i').classList.toggle('fa-bars');
-  menuToggle.querySelector('i').classList.toggle('fa-times');
-});
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+const menuIcon = menuToggle.querySelector('i');
+
+function openMenu(){
+  navLinks.classList.add('open');
+  document.body.classList.add('menu-open');
+  menuIcon.classList.remove('fa-bars');
+  menuIcon.classList.add('fa-times');
+  menuToggle.setAttribute('aria-expanded', 'true');
+}
+
+function closeMenu(){
   navLinks.classList.remove('open');
-  menuToggle.querySelector('i').classList.add('fa-bars');
-  menuToggle.querySelector('i').classList.remove('fa-times');
-}));
+  document.body.classList.remove('menu-open');
+  menuIcon.classList.remove('fa-times');
+  menuIcon.classList.add('fa-bars');
+  menuToggle.setAttribute('aria-expanded', 'false');
+}
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = navLinks.classList.contains('open');
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
 // Tab buttons (cosmetic)
 document.querySelectorAll('.tab-btn').forEach(btn => {
