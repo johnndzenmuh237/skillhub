@@ -1107,14 +1107,15 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
      HERO
 ════════════════════════════════════════════════════════════ -->
 <section class="hero" id="home">
+
   <div class="hero-glow-a"></div>
   <div class="hero-glow-b"></div>
   <div class="hero-grid"></div>
 
   <div class="hero-inner">
 
-    <!-- ══════════ LEFT: Text ══════════ -->
-    <div class="hero-text">
+    <!-- Text -->
+    <div>
       <div class="hero-eyebrow">Available for new projects</div>
 
       <h1 class="hero-title">
@@ -1144,63 +1145,48 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
       </div>
     </div>
 
-    <!-- ══════════ RIGHT: Picture column ══════════ -->
-    <div class="hero-picture-col">
-
-      <!-- Floating stat chips -->
-      <div class="hero-stat-chips">
-        <div class="hero-chip">
-          <span class="hero-chip-icon">🏆</span>
-          <div>
-      <!-- Photo frame -->
-      <div class="hero-photo-frame">
-        <div class="hero-visual">
-          <div class="hero-card-wrap">
-            <div class="hero-img-wrap">
-              <img src="images/hero.png" alt="Hero" class="hero-photo-img">
-            </div>
-          </div>
-        </div>
-
-        <!-- Availability badge -->
-        <div class="hero-badge-avail">Available for hire</div>
-      </div>
-
-      <!-- Mini-cards grid -->
-      <div class="hero-showcase">
-        <div class="mini-card" onclick="scrollToWork('saas')">
-          <div class="mc-icon">⚡</div>
-          <div class="mc-label">SaaS Web Apps</div>
-          <div class="mc-count">5 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('biz')">
-          <div class="mc-icon">🏢</div>
-          <div class="mc-label">Business Sites</div>
-          <div class="mc-count">6 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('land')">
-          <div class="mc-icon">🚀</div>
-          <div class="mc-label">Landing Pages</div>
-          <div class="mc-count">8 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('port')">
-          <div class="mc-icon">🎨</div>
-          <div class="mc-label">Portfolio Sites</div>
-          <div class="mc-count">4 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
-        </div>
-        <div class="mini-card span2" onclick="scrollToWork('crypto')">
-          <div class="mc-icon">₿</div>
-          <div class="mc-label">Crypto Dashboards</div>
-          <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
+    <!-- Hero Image -->
+    <div class="hero-visual">
+      <div class="hero-card-wrap">
+        <div class="hero-img-wrap">
+          <img src="images/hero.png" alt="AI Skills Hub Hero">
         </div>
       </div>
+    </div>
 
-    </div><!-- /hero-picture-col -->
+    <!-- Floating category mini-cards -->
+    <div class="hero-showcase">
+      <div class="mini-card" onclick="scrollToWork('saas')">
+        <div class="mc-icon">⚡</div>
+        <div class="mc-label">SaaS Web Apps</div>
+        <div class="mc-count">5 projects</div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
+      </div>
+      <div class="mini-card" onclick="scrollToWork('biz')">
+        <div class="mc-icon">🏢</div>
+        <div class="mc-label">Business Sites</div>
+        <div class="mc-count">6 projects</div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
+      </div>
+      <div class="mini-card" onclick="scrollToWork('land')">
+        <div class="mc-icon">🚀</div>
+        <div class="mc-label">Landing Pages</div>
+        <div class="mc-count">8 projects</div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
+      </div>
+      <div class="mini-card" onclick="scrollToWork('port')">
+        <div class="mc-icon">🎨</div>
+        <div class="mc-label">Portfolio Sites</div>
+        <div class="mc-count">4 projects</div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
+      </div>
+      <div class="mini-card span2" onclick="scrollToWork('crypto')">
+        <div class="mc-icon">₿</div>
+        <div class="mc-label">Crypto Dashboards</div>
+        <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
+      </div>
+    </div>
 
   </div>
 </section>
