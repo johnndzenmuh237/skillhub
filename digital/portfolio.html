@@ -989,6 +989,78 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}
   [data-reveal]{opacity:1;transform:none;}
 }
+     /* ── Nav Button (added to each card) ── */
+  .svc-nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 8px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #a78bfa;
+    background: rgba(124, 58, 237, 0.08);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  }
+  .svc-nav-btn:hover {
+    background: rgba(124, 58, 237, 0.18);
+    border-color: rgba(124, 58, 237, 0.5);
+    color: #c4b5fd;
+    transform: translateY(-1px);
+  }
+  .svc-nav-btn svg {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .svc-nav-btn:hover svg {
+    transform: translateX(2px);
+  }
+
+  /* Tint overrides per card variant so arrows feel native */
+  .svc-card.v2 .svc-nav-btn { color: #22d3ee; background: rgba(6,182,212,.08); border-color: rgba(6,182,212,.25); }
+  .svc-card.v2 .svc-nav-btn:hover { background: rgba(6,182,212,.18); border-color: rgba(6,182,212,.5); color: #67e8f9; }
+
+  .svc-card.v3 .svc-nav-btn { color: #fb7185; background: rgba(244,63,94,.08); border-color: rgba(244,63,94,.25); }
+  .svc-card.v3 .svc-nav-btn:hover { background: rgba(244,63,94,.18); border-color: rgba(244,63,94,.5); color: #fda4af; }
+
+  .svc-card.v4 .svc-nav-btn { color: #fbbf24; background: rgba(245,158,11,.08); border-color: rgba(245,158,11,.25); }
+  .svc-card.v4 .svc-nav-btn:hover { background: rgba(245,158,11,.18); border-color: rgba(245,158,11,.5); color: #fcd34d; }
+
+  .svc-card.v5 .svc-nav-btn { color: #34d399; background: rgba(16,185,129,.08); border-color: rgba(16,185,129,.25); }
+  .svc-card.v5 .svc-nav-btn:hover { background: rgba(16,185,129,.18); border-color: rgba(16,185,129,.5); color: #6ee7b7; }
+
+  .svc-card.v6 .svc-nav-btn { color: #a78bfa; background: rgba(124,58,237,.08); border-color: rgba(124,58,237,.25); }
+  .svc-card.v6 .svc-nav-btn:hover { background: rgba(124,58,237,.18); border-color: rgba(124,58,237,.5); color: #c4b5fd; }
+
+  /* New card variants */
+  .svc-card.v7 .svc-nav-btn { color: #f472b6; background: rgba(236,72,153,.08); border-color: rgba(236,72,153,.25); }
+  .svc-card.v7 .svc-nav-btn:hover { background: rgba(236,72,153,.18); border-color: rgba(236,72,153,.5); color: #f9a8d4; }
+
+  .svc-card.v8 .svc-nav-btn { color: #60a5fa; background: rgba(59,130,246,.08); border-color: rgba(59,130,246,.25); }
+  .svc-card.v8 .svc-nav-btn:hover { background: rgba(59,130,246,.18); border-color: rgba(59,130,246,.5); color: #93c5fd; }
+
+  .svc-card.v9 .svc-nav-btn { color: #4ade80; background: rgba(34,197,94,.08); border-color: rgba(34,197,94,.25); }
+  .svc-card.v9 .svc-nav-btn:hover { background: rgba(34,197,94,.18); border-color: rgba(34,197,94,.5); color: #86efac; }
+
+  .svc-card.v10 .svc-nav-btn { color: #facc15; background: rgba(234,179,8,.08); border-color: rgba(234,179,8,.25); }
+  .svc-card.v10 .svc-nav-btn:hover { background: rgba(234,179,8,.18); border-color: rgba(234,179,8,.5); color: #fde047; }
+
+  .svc-card.v11 .svc-nav-btn { color: #c084fc; background: rgba(168,85,247,.08); border-color: rgba(168,85,247,.25); }
+  .svc-card.v11 .svc-nav-btn:hover { background: rgba(168,85,247,.18); border-color: rgba(168,85,247,.5); color: #d8b4fe; }
+
+  .svc-card.v12 .svc-nav-btn { color: #2dd4bf; background: rgba(20,184,166,.08); border-color: rgba(20,184,166,.25); }
+  .svc-card.v12 .svc-nav-btn:hover { background: rgba(20,184,166,.18); border-color: rgba(20,184,166,.5); color: #5eead4; }
+
+  .svc-card.v13 .svc-nav-btn { color: #f87171; background: rgba(239,68,68,.08); border-color: rgba(239,68,68,.25); }
+  .svc-card.v13 .svc-nav-btn:hover { background: rgba(239,68,68,.18); border-color: rgba(239,68,68,.5); color: #fca5a5; }
 </style>
 </head>
 <body>
@@ -1726,6 +1798,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
       </div>
     </div>
     <div class="services-grid">
+
+      <!-- ── ORIGINAL 6 CARDS ── -->
+
       <div class="svc-card v1" data-reveal data-delay="1">
         <div class="svc-icon" style="background:var(--violet-gl);border:1px solid rgba(124,58,237,.2);">⚡</div>
         <div class="svc-title">SaaS Web Applications</div>
@@ -1736,7 +1811,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">Real-time dashboards &amp; analytics</div>
           <div class="svc-feat">REST &amp; GraphQL API integration</div>
         </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View SaaS demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
+
       <div class="svc-card v2" data-reveal data-delay="2">
         <div class="svc-icon" style="background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.2);">🏢</div>
         <div class="svc-title">Business Websites</div>
@@ -1747,7 +1829,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">Lead capture &amp; CRM forms</div>
           <div class="svc-feat">Speed &amp; Core Web Vitals optimised</div>
         </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Business Websites demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
+
       <div class="svc-card v3" data-reveal data-delay="3">
         <div class="svc-icon" style="background:rgba(244,63,94,.1);border:1px solid rgba(244,63,94,.2);">🚀</div>
         <div class="svc-title">Landing Pages</div>
@@ -1758,7 +1847,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">Countdown timers &amp; waitlists</div>
           <div class="svc-feat">Pixel &amp; analytics tracking</div>
         </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Landing Pages demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
+
       <div class="svc-card v4" data-reveal data-delay="1">
         <div class="svc-icon" style="background:var(--gold-gl);border:1px solid rgba(245,158,11,.2);">🎨</div>
         <div class="svc-title">Portfolio Websites</div>
@@ -1769,7 +1865,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">Print/store integrations</div>
           <div class="svc-feat">Instagram &amp; Behance embed</div>
         </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Portfolio Websites demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
+
       <div class="svc-card v5" data-reveal data-delay="2">
         <div class="svc-icon" style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);">₿</div>
         <div class="svc-title">Crypto Dashboards</div>
@@ -1780,7 +1883,14 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">CoinGecko / Etherscan APIs</div>
           <div class="svc-feat">D3.js &amp; Recharts visualisations</div>
         </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Crypto Dashboards demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
+
       <div class="svc-card v6" data-reveal data-delay="3">
         <div class="svc-icon" style="background:rgba(124,58,237,.1);border:1px solid rgba(124,58,237,.2);">🔧</div>
         <div class="svc-title">Design Systems &amp; UI Kits</div>
@@ -1790,6 +1900,229 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
           <div class="svc-feat">CSS/Tailwind token system</div>
           <div class="svc-feat">Storybook documentation</div>
           <div class="svc-feat">Accessibility AA compliance</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Design Systems demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- ── NEW CARDS ── -->
+
+      <div class="svc-card v7" data-reveal data-delay="1">
+        <div class="svc-icon" style="background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.2);">🛒</div>
+        <div class="svc-title">E-Commerce Websites</div>
+        <p class="svc-desc">High-converting online stores built for growth — from product discovery to checkout, optimised to sell.</p>
+        <div class="svc-features">
+          <div class="svc-feat">Shopify / WooCommerce builds</div>
+          <div class="svc-feat">Custom product filtering &amp; search</div>
+          <div class="svc-feat">Multi-currency &amp; payment gateways</div>
+          <div class="svc-feat">Inventory &amp; order management</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View E-Commerce demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v8" data-reveal data-delay="2">
+        <div class="svc-icon" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);">🌐</div>
+        <div class="svc-title">Agency Websites</div>
+        <p class="svc-desc">Bold, award-worthy agency sites built to win pitches, attract talent, and position your brand as the best in the room.</p>
+        <div class="svc-features">
+          <div class="svc-feat">Statement hero &amp; case study layouts</div>
+          <div class="svc-feat">Team &amp; culture pages</div>
+          <div class="svc-feat">Services &amp; capability decks</div>
+          <div class="svc-feat">Smooth scroll &amp; GSAP animations</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Agency Websites demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v9" data-reveal data-delay="3">
+        <div class="svc-icon" style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);">🪙</div>
+        <div class="svc-title">Crypto Landing Pages</div>
+        <p class="svc-desc">High-impact launch pages for tokens, NFT drops, and Web3 projects — built to hype, capture leads, and drive conversions.</p>
+        <div class="svc-features">
+          <div class="svc-feat">Tokenomics &amp; roadmap sections</div>
+          <div class="svc-feat">Whitepaper &amp; presale integration</div>
+          <div class="svc-feat">Animated particle &amp; glow effects</div>
+          <div class="svc-feat">Community &amp; Discord link-ups</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Crypto Landing Pages demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v10" data-reveal data-delay="1">
+        <div class="svc-icon" style="background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2);">🤖</div>
+        <div class="svc-title">Crypto Trading Bots</div>
+        <p class="svc-desc">Automated crypto trading bots with custom strategies, exchange integrations, and real-time performance dashboards.</p>
+        <div class="svc-features">
+          <div class="svc-feat">Binance / Bybit / OKX API hooks</div>
+          <div class="svc-feat">Grid, DCA &amp; momentum strategies</div>
+          <div class="svc-feat">Risk management &amp; stop-loss logic</div>
+          <div class="svc-feat">Live P&amp;L dashboard &amp; alerts</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Crypto Trading Bots demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v11" data-reveal data-delay="2">
+        <div class="svc-icon" style="background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);">📈</div>
+        <div class="svc-title">Forex Trading Bots</div>
+        <p class="svc-desc">Algorithmic forex bots with MT4/MT5 integration, backtesting pipelines, and broker-ready Expert Advisors.</p>
+        <div class="svc-features">
+          <div class="svc-feat">MetaTrader 4 &amp; 5 EA development</div>
+          <div class="svc-feat">Custom indicator &amp; signal logic</div>
+          <div class="svc-feat">Backtesting &amp; forward testing</div>
+          <div class="svc-feat">VPS deployment &amp; monitoring</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Forex Trading Bots demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v12" data-reveal data-delay="3">
+        <div class="svc-icon" style="background:rgba(20,184,166,.1);border:1px solid rgba(20,184,166,.2);">🔀</div>
+        <div class="svc-title">Synthetic Trading Bots</div>
+        <p class="svc-desc">Precision bots engineered for Deriv synthetic indices — V75, Boom &amp; Crash, Range Break, and more, running 24/7.</p>
+        <div class="svc-features">
+          <div class="svc-feat">Deriv / Binary.com API integration</div>
+          <div class="svc-feat">Volatility &amp; step index strategies</div>
+          <div class="svc-feat">Martingale &amp; anti-martingale modes</div>
+          <div class="svc-feat">Auto stake &amp; drawdown controls</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View Synthetic Trading Bots demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="svc-card v13" data-reveal data-delay="1">
+        <div class="svc-icon" style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);">📱</div>
+        <div class="svc-title">App Development</div>
+        <p class="svc-desc">Cross-platform mobile and web apps — from MVP to production — built with modern frameworks and shipped fast.</p>
+        <div class="svc-features">
+          <div class="svc-feat">React Native &amp; Flutter builds</div>
+          <div class="svc-feat">iOS &amp; Android deployment</div>
+          <div class="svc-feat">Push notifications &amp; offline mode</div>
+          <div class="svc-feat">App Store &amp; Play Store submission</div>
+        </div>
+        <a href="#work" class="svc-nav-btn" aria-label="View App Development demo work">
+          View Demo Work
+          <svg viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M1 6h10M6 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PROCESS
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:0;" data-reveal>
+      <div class="section-eyebrow" style="justify-content:center;">// how it works</div>
+      <h2 class="section-title">From idea to live — in 4 steps</h2>
+      <p class="section-sub" style="margin:0 auto;">A clear, collaborative process with no surprises. You stay informed at every stage.</p>
+    </div>
+    <div class="process-grid">
+      <div class="proc-step" data-reveal data-delay="1">
+        <div class="proc-num">01</div>
+        <div class="proc-icon">🎯</div>
+        <div class="proc-title">Discovery Call</div>
+        <p class="proc-desc">We talk goals, audience, budget, and timeline. I ask the questions that most designers skip — so we build the right thing first time.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="2">
+        <div class="proc-num">02</div>
+        <div class="proc-icon">✏️</div>
+        <div class="proc-title">Design &amp; Prototype</div>
+        <p class="proc-desc">Wireframes → high-fidelity Figma mockup → your approval. You see the site before a single line of code is written.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="3">
+        <div class="proc-num">03</div>
+        <div class="proc-icon">⚙️</div>
+        <div class="proc-title">Build &amp; Test</div>
+        <p class="proc-desc">Pixel-perfect development with weekly previews. Cross-browser testing, performance tuning, and accessibility review included.</p>
+      </div>
+      <div class="proc-step" data-reveal data-delay="4">
+        <div class="proc-num">04</div>
+        <div class="proc-icon">🚀</div>
+        <div class="proc-title">Launch &amp; Support</div>
+        <p class="proc-desc">Deployment on your preferred host. 30-day post-launch support included. Optional monthly maintenance retainer available.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════════════════════════ -->
+<section class="section section-bg2">
+  <div class="wrap">
+    <div style="text-align:center;" data-reveal>
+      <div class="section-eyebrow" style="justify-content:center;">// client reviews</div>
+      <h2 class="section-title">What clients say</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card" data-reveal data-delay="1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Skill Hub delivered a SaaS dashboard that would cost $30K+ at an agency. Clean code, stunning UI, and he flagged edge cases I hadn't even thought of. Absolutely my go-to developer."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">AM</div>
+          <div>
+            <div class="testi-name">Alex Mitchell</div>
+            <div class="testi-role">Founder, AnalyticsPro</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-delay="2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"Our landing page went from 1.2% to 4.8% conversion after skill hub redesigned it. That's a 4× improvement in leads without changing our ad spend. ROI in week one."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#F43F5E,#F97316);">SR</div>
+          <div>
+            <div class="testi-name">Sophie Renaud</div>
+            <div class="testi-role">CMO, NovaSend</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-reveal data-delay="3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The crypto dashboard he built handles 50K+ concurrent users on market open. WebSocket performance is rock solid. Delivered on time and was great at explaining technical decisions."</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#10B981,#06B6D4);">KL</div>
+          <div>
+            <div class="testi-name">Kwame Larbi</div>
+            <div class="testi-role">CTO, ChainView</div>
+          </div>
         </div>
       </div>
     </div>
