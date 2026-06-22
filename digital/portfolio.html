@@ -1112,22 +1112,27 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   <div class="hero-grid"></div>
 
   <div class="hero-inner">
-    <!-- Text -->
-    <div>
+
+    <!-- ══════════ LEFT: Text ══════════ -->
+    <div class="hero-text">
       <div class="hero-eyebrow">Available for new projects</div>
+
       <h1 class="hero-title">
         I build web products<br />
         that <em>convert &amp; scale</em>
       </h1>
+
       <p class="hero-sub">
         Full-stack web designer &amp; developer specialising in SaaS platforms,
         business sites, high-converting landing pages, portfolio sites, and
         crypto dashboards. Pixel-perfect. Performance-first.
       </p>
+
       <div class="hero-actions">
         <a href="#work"    class="btn-primary">View my work <span>↓</span></a>
         <a href="#contact" class="btn-outline">Start a project</a>
       </div>
+
       <div class="hero-trust">
         <div class="hero-trust-dots">
           <div class="hero-dot" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">A</div>
@@ -1139,39 +1144,709 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
       </div>
     </div>
 
-    <!-- Floating category mini-cards -->
-    <div class="hero-showcase">
-      <div class="mini-card" onclick="scrollToWork('saas')">
-        <div class="mc-icon">⚡</div>
-        <div class="mc-label">SaaS Web Apps</div>
-        <div class="mc-count">5 projects</div>
-        <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
+    <!-- ══════════ RIGHT: Picture column ══════════ -->
+    <div class="hero-picture-col">
+
+      <!-- Floating stat chips -->
+      <div class="hero-stat-chips">
+        <div class="hero-chip">
+          <span class="hero-chip-icon">🏆</span>
+          <div>
+            <div class="hero-chip-val">40+</div>
+            <div class="hero-chip-lbl">Projects delivered</div>
+          </div>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-icon">🌍</span>
+          <div>
+            <div class="hero-chip-val">12</div>
+            <div class="hero-chip-lbl">Countries</div>
+          </div>
+        </div>
+        <div class="hero-chip">
+          <span class="hero-chip-icon">⚡</span>
+          <div>
+            <div class="hero-chip-val">100%</div>
+            <div class="hero-chip-lbl">On-time delivery</div>
+          </div>
+        </div>
       </div>
-      <div class="mini-card" onclick="scrollToWork('biz')">
-        <div class="mc-icon">🏢</div>
-        <div class="mc-label">Business Sites</div>
-        <div class="mc-count">6 projects</div>
-        <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
+
+      <!-- Photo frame -->
+      <div class="hero-photo-frame">
+
+        <!--
+        ╔═════════════════════════════════════════════════════╗
+        ║  SWAP THIS PLACEHOLDER WITH YOUR PHOTO:            ║
+        ║  Delete the <div class="hero-photo-placeholder">   ║
+        ║  block and replace with:                           ║
+        ║                                                     ║
+        ║  <img src="images/hero.png"                         ║
+        ║       alt="hero"                              ║
+        ║       class="hero-photo-img">                      ║
+        ║                                                     ║
+        ║  Best results: portrait crop, 3:4 ratio,           ║
+        ║  subject centred, top-aligned                      ║
+        ╚═════════════════════════════════════════════════════╝
+        -->
+        <div class="hero-photo-placeholder">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+               xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+          </svg>
+          <span>Your photo here<br/>Portrait · 3:4 ratio recommended</span>
+        </div>
+
+        <!-- Availability badge -->
+        <div class="hero-badge-avail">Available for hire</div>
       </div>
-      <div class="mini-card" onclick="scrollToWork('land')">
-        <div class="mc-icon">🚀</div>
-        <div class="mc-label">Landing Pages</div>
-        <div class="mc-count">8 projects</div>
-        <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
+
+      <!-- Mini-cards grid -->
+      <div class="hero-showcase">
+        <div class="mini-card" onclick="scrollToWork('saas')">
+          <div class="mc-icon">⚡</div>
+          <div class="mc-label">SaaS Web Apps</div>
+          <div class="mc-count">5 projects</div>
+          <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
+        </div>
+        <div class="mini-card" onclick="scrollToWork('biz')">
+          <div class="mc-icon">🏢</div>
+          <div class="mc-label">Business Sites</div>
+          <div class="mc-count">6 projects</div>
+          <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
+        </div>
+        <div class="mini-card" onclick="scrollToWork('land')">
+          <div class="mc-icon">🚀</div>
+          <div class="mc-label">Landing Pages</div>
+          <div class="mc-count">8 projects</div>
+          <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
+        </div>
+        <div class="mini-card" onclick="scrollToWork('port')">
+          <div class="mc-icon">🎨</div>
+          <div class="mc-label">Portfolio Sites</div>
+          <div class="mc-count">4 projects</div>
+          <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
+        </div>
+        <div class="mini-card span2" onclick="scrollToWork('crypto')">
+          <div class="mc-icon">₿</div>
+          <div class="mc-label">Crypto Dashboards</div>
+          <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
+          <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
+        </div>
       </div>
-      <div class="mini-card" onclick="scrollToWork('port')">
-        <div class="mc-icon">🎨</div>
-        <div class="mc-label">Portfolio Sites</div>
-        <div class="mc-count">4 projects</div>
-        <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
-      </div>
-      <div class="mini-card span2" onclick="scrollToWork('crypto')">
-        <div class="mc-icon">₿</div>
-        <div class="mc-label">Crypto Dashboards</div>
-        <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
-        <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
-      </div>
+
+    </div><!-- /hero-picture-col -->
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     STATS
+════════════════════════════════════════════════════════════ -->
+<div class="stats-strip" data-reveal>
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-val" data-count="40" data-suffix="+">0</div>
+      <div class="stat-lbl">Projects delivered</div>
     </div>
+    <div class="stat-item">
+      <div class="stat-val" data-count="12" data-suffix="+">0</div>
+      <div class="stat-lbl">Countries served</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val" data-count="98" data-suffix="%">0</div>
+      <div class="stat-lbl">Client satisfaction</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-val" data-count="5" data-suffix=" yrs">0</div>
+      <div class="stat-lbl">Years experience</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PORTFOLIO SECTION
+════════════════════════════════════════════════════════════ -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-header-row" data-reveal>
+      <div>
+        <div class="section-eyebrow">// portfolio</div>
+        <h2 class="section-title">Showcase Work</h2>
+        <p class="section-sub">Click any project to see the full case study. Filter by category below.</p>
+      </div>
+      <a href="#contact" class="btn-outline" style="align-self:flex-end;">Start a project →</a>
+    </div>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" data-reveal id="filter-bar">
+      <button class="filter-btn active" data-filter="all">
+        <span class="fi">✦</span> All Work
+      </button>
+      <button class="filter-btn" data-filter="saas">
+        <span class="fi">⚡</span> SaaS Apps
+      </button>
+      <button class="filter-btn" data-filter="biz">
+        <span class="fi">🏢</span> Business
+      </button>
+      <button class="filter-btn" data-filter="land">
+        <span class="fi">🚀</span> Landing Pages
+      </button>
+      <button class="filter-btn" data-filter="port">
+        <span class="fi">🎨</span> Portfolio
+      </button>
+      <button class="filter-btn" data-filter="crypto">
+        <span class="fi">₿</span> Crypto
+      </button>
+    </div>
+
+    <!-- Portfolio grid -->
+    <div class="portfolio-grid" id="portfolio-grid">
+
+      <!-- ── SaaS 1 ── -->
+      <div class="proj-card" data-cat="saas" data-reveal data-delay="1"
+           data-title="Flowdesk — Project Management SaaS"
+           data-desc="A full-featured project management platform with Kanban boards, Gantt timelines, AI task breakdown, team collaboration, and real-time dashboards. Built for teams of 5–500."
+           data-feats="Kanban & List views|Gantt timeline|AI task breakdown|Real-time updates|Team permissions|60+ integrations|Custom dashboards|Mobile responsive"
+           data-tech="React,Node.js,Firebase,Tailwind,Stripe"
+           data-cat-label="SaaS Web App"
+           data-cat-class="tag-saas"
+           data-prev-class="prev-saas">
+        <div class="proj-preview prev-saas">
+          <div class="proj-preview-inner">
+            <div class="px-topbar">
+              <div class="px-dot" style="background:#FF5F57;"></div>
+              <div class="px-dot" style="background:#FEBC2E;"></div>
+              <div class="px-dot" style="background:#28C840;"></div>
+              <div class="px-url"></div>
+            </div>
+            <div class="px-row" style="flex:1;gap:8px;">
+              <div class="px-sidebar">
+                <div class="px-sidebar-item on"></div>
+                <div class="px-sidebar-item"></div>
+                <div class="px-sidebar-item"></div>
+                <div class="px-sidebar-item"></div>
+                <div class="px-sidebar-item"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:6px;">
+                <div class="px-row" style="gap:6px;">
+                  <div class="px-block" style="height:32px;flex:1;background:rgba(124,58,237,.2);border-radius:6px;border:1px solid rgba(124,58,237,.3);"></div>
+                  <div class="px-block" style="height:32px;flex:1;"></div>
+                  <div class="px-block" style="height:32px;flex:1;"></div>
+                </div>
+                <div class="px-chart">
+                  <div class="px-bar" style="height:45%;background:rgba(124,58,237,.7);"></div>
+                  <div class="px-bar" style="height:65%;background:rgba(124,58,237,.5);"></div>
+                  <div class="px-bar" style="height:35%;background:rgba(6,182,212,.6);"></div>
+                  <div class="px-bar" style="height:80%;background:rgba(124,58,237,.7);"></div>
+                  <div class="px-bar" style="height:55%;background:rgba(124,58,237,.5);"></div>
+                  <div class="px-bar" style="height:90%;background:rgba(6,182,212,.6);"></div>
+                  <div class="px-bar" style="height:70%;background:rgba(124,58,237,.7);"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-saas">⚡ SaaS Web App</div>
+          <div class="proj-name">Flowdesk — Project Management</div>
+          <p class="proj-desc">Full-featured PM platform with AI, Kanban, Gantt timeline, and team dashboards. Built for scale.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Firebase</span>
+              <span class="tech-pill">Stripe</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SaaS 2 ── -->
+      <div class="proj-card" data-cat="saas" data-reveal data-delay="2"
+           data-title="AnalyticsPro — Data Intelligence SaaS"
+           data-desc="A B2B analytics SaaS platform that connects to multiple data sources, builds visual reports with drag-and-drop widgets, and sends automated email digests to stakeholders."
+           data-feats="40+ data connectors|Drag-and-drop reports|Email digests|White-label mode|API access|Role permissions|Export to PDF/CSV|Usage analytics"
+           data-tech="Vue.js,Python,PostgreSQL,Chart.js,AWS"
+           data-cat-label="SaaS Web App"
+           data-cat-class="tag-saas"
+           data-prev-class="prev-saas">
+        <div class="proj-preview prev-saas">
+          <div class="proj-preview-inner">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+              <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--violet-lt);">AnalyticsPro</div>
+              <div style="font-size:.6rem;background:rgba(124,58,237,.2);padding:2px 8px;border-radius:4px;color:var(--violet-lt);">Live</div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:6px;">
+              <div style="background:rgba(124,58,237,.12);border-radius:6px;padding:8px;border:1px solid rgba(124,58,237,.2);">
+                <div style="font-size:.65rem;color:var(--txt3);margin-bottom:2px;">Sessions</div>
+                <div style="font-family:var(--f-mono);font-size:.9rem;color:var(--violet-lt);font-weight:700;">24.8K</div>
+              </div>
+              <div style="background:rgba(6,182,212,.08);border-radius:6px;padding:8px;border:1px solid rgba(6,182,212,.15);">
+                <div style="font-size:.65rem;color:var(--txt3);margin-bottom:2px;">Revenue</div>
+                <div style="font-family:var(--f-mono);font-size:.9rem;color:#22D3EE;font-weight:700;">$4.2K</div>
+              </div>
+            </div>
+            <div class="px-chart" style="height:80px;">
+              <div class="px-bar" style="height:30%;background:rgba(124,58,237,.4);"></div>
+              <div class="px-bar" style="height:55%;background:rgba(124,58,237,.5);"></div>
+              <div class="px-bar" style="height:45%;background:rgba(6,182,212,.4);"></div>
+              <div class="px-bar" style="height:75%;background:rgba(124,58,237,.6);"></div>
+              <div class="px-bar" style="height:60%;background:rgba(124,58,237,.5);"></div>
+              <div class="px-bar" style="height:85%;background:rgba(6,182,212,.5);"></div>
+              <div class="px-bar" style="height:70%;background:rgba(124,58,237,.7);"></div>
+              <div class="px-bar" style="height:95%;background:rgba(124,58,237,.8);"></div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-saas">⚡ SaaS Web App</div>
+          <div class="proj-name">AnalyticsPro — Data Intelligence</div>
+          <p class="proj-desc">B2B analytics platform with 40+ connectors, visual reports, and automated stakeholder digests.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">Vue.js</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">AWS</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── SaaS 3 ── -->
+      <div class="proj-card" data-cat="saas" data-reveal data-delay="3"
+           data-title="Invoiceify — Billing SaaS for Freelancers"
+           data-desc="A clean, minimal invoicing and payment SaaS for freelancers and agencies. Create, send, and track invoices in under 60 seconds. Integrates with Stripe and PayPal."
+           data-feats="Instant invoice builder|PDF export|Online payment links|Recurring billing|Client portal|Tax calculator|Expense tracking|Multi-currency"
+           data-tech="Next.js,Stripe,Tailwind,Prisma,Vercel"
+           data-cat-label="SaaS Web App"
+           data-cat-class="tag-saas"
+           data-prev-class="prev-saas">
+        <div class="proj-preview prev-saas">
+          <div class="proj-preview-inner">
+            <div style="font-family:var(--f-mono);font-size:.65rem;color:var(--violet-lt);margin-bottom:8px;">Invoice #INV-0024</div>
+            <div style="background:rgba(255,255,255,.04);border-radius:6px;padding:10px;border:1px solid rgba(255,255,255,.06);">
+              <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                <div style="height:6px;width:60px;background:rgba(255,255,255,.12);border-radius:3px;"></div>
+                <div style="font-family:var(--f-mono);font-size:.7rem;color:var(--gold-lt);">$2,400</div>
+              </div>
+              <div style="height:4px;width:80%;background:rgba(255,255,255,.07);border-radius:2px;margin-bottom:4px;"></div>
+              <div style="height:4px;width:55%;background:rgba(255,255,255,.05);border-radius:2px;"></div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:8px;">
+              <div style="flex:1;height:24px;background:rgba(124,58,237,.3);border-radius:4px;border:1px solid rgba(124,58,237,.5);"></div>
+              <div style="flex:1;height:24px;background:rgba(255,255,255,.04);border-radius:4px;border:1px solid rgba(255,255,255,.07);"></div>
+            </div>
+            <div style="margin-top:8px;height:3px;background:rgba(255,255,255,.05);border-radius:2px;overflow:hidden;">
+              <div style="height:100%;width:65%;background:linear-gradient(90deg,var(--violet),var(--cyan));border-radius:2px;"></div>
+            </div>
+            <div style="font-size:.6rem;color:var(--txt3);margin-top:4px;">65% paid · $840 remaining</div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-saas">⚡ SaaS Web App</div>
+          <div class="proj-name">Invoiceify — Freelancer Billing</div>
+          <p class="proj-desc">Minimal invoicing SaaS with Stripe payments, client portal, and recurring billing in 60 seconds.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Stripe</span>
+              <span class="tech-pill">Prisma</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Business 1 ── -->
+      <div class="proj-card" data-cat="biz" data-reveal data-delay="1"
+           data-title="NorthPeak Law — Law Firm Website"
+           data-desc="A trust-first corporate website for a mid-size law firm. Designed to convert high-value leads with a strong above-fold headline, practice area pages, attorney bios, and a secure intake form."
+           data-feats="Multi-page architecture|SEO optimised|Attorney profile pages|Practice area pages|Secure contact form|Google Maps embed|Blog/insights|Cookie consent"
+           data-tech="HTML5,CSS3,JS,WordPress,Elementor"
+           data-cat-label="Business Website"
+           data-cat-class="tag-biz"
+           data-prev-class="prev-biz">
+        <div class="proj-preview prev-biz">
+          <div class="proj-preview-inner">
+            <div class="px-topbar" style="background:rgba(6,182,212,.06);border:1px solid rgba(6,182,212,.15);">
+              <div class="px-nav">
+                <div class="px-nav-item active" style="background:rgba(6,182,212,.6);"></div>
+                <div class="px-nav-item"></div>
+                <div class="px-nav-item"></div>
+                <div class="px-nav-item"></div>
+              </div>
+              <div style="margin-left:auto;width:50px;height:18px;background:rgba(6,182,212,.3);border-radius:4px;"></div>
+            </div>
+            <div class="px-hero-biz">
+              <div class="px-headline" style="width:80%;"></div>
+              <div class="px-sub-line" style="width:60%;"></div>
+              <div class="px-sub-line" style="width:45%;"></div>
+              <div class="px-btn-demo"></div>
+            </div>
+            <div class="px-row" style="gap:6px;margin-top:auto;">
+              <div class="px-block" style="flex:1;height:40px;border-radius:6px;background:rgba(6,182,212,.07);border:1px solid rgba(6,182,212,.1);"></div>
+              <div class="px-block" style="flex:1;height:40px;border-radius:6px;"></div>
+              <div class="px-block" style="flex:1;height:40px;border-radius:6px;"></div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-biz">🏢 Business Website</div>
+          <div class="proj-name">NorthPeak Law — Law Firm Site</div>
+          <p class="proj-desc">High-conversion corporate site with attorney profiles, practice areas, and a secure lead intake form.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">WordPress</span>
+              <span class="tech-pill">Elementor</span>
+              <span class="tech-pill">SEO</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Business 2 ── -->
+      <div class="proj-card" data-cat="biz" data-reveal data-delay="2"
+           data-title="GreenLeaf Clinics — Healthcare Website"
+           data-desc="A patient-first website for a multi-location private clinic group. Features online appointment booking, doctor directory, service pages, and GDPR-compliant forms."
+           data-feats="Online booking system|Doctor directory|Multi-location map|Patient portal link|GDPR-compliant forms|Blog/health guides|Accessibility AA|Fast mobile load"
+           data-tech="Next.js,Tailwind,Sanity CMS,Calendly API"
+           data-cat-label="Business Website"
+           data-cat-class="tag-biz"
+           data-prev-class="prev-biz">
+        <div class="proj-preview prev-biz">
+          <div class="proj-preview-inner">
+            <div style="font-size:.65rem;color:#22D3EE;font-family:var(--f-mono);margin-bottom:6px;">GreenLeaf Clinics</div>
+            <div style="display:flex;gap:8px;flex:1;">
+              <div style="flex:1;background:rgba(6,182,212,.06);border-radius:6px;padding:8px;border:1px solid rgba(6,182,212,.12);">
+                <div style="font-size:.6rem;color:var(--txt3);margin-bottom:4px;">Book Appointment</div>
+                <div style="height:5px;background:rgba(255,255,255,.07);border-radius:3px;margin-bottom:4px;"></div>
+                <div style="height:5px;background:rgba(255,255,255,.05);border-radius:3px;margin-bottom:4px;width:70%;"></div>
+                <div style="height:18px;background:rgba(6,182,212,.3);border-radius:4px;margin-top:8px;"></div>
+              </div>
+              <div style="flex:1;display:flex;flex-direction:column;gap:5px;">
+                <div style="background:rgba(255,255,255,.04);border-radius:5px;padding:7px;border:1px solid rgba(255,255,255,.06);">
+                  <div style="font-size:.6rem;color:var(--txt3);">Doctors</div>
+                  <div style="font-family:var(--f-mono);font-size:.8rem;color:#22D3EE;">12</div>
+                </div>
+                <div style="background:rgba(255,255,255,.04);border-radius:5px;padding:7px;border:1px solid rgba(255,255,255,.06);">
+                  <div style="font-size:.6rem;color:var(--txt3);">Locations</div>
+                  <div style="font-family:var(--f-mono);font-size:.8rem;color:#22D3EE;">4</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-biz">🏢 Business Website</div>
+          <div class="proj-name">GreenLeaf Clinics — Healthcare</div>
+          <p class="proj-desc">Multi-location clinic site with online booking, doctor directory, and GDPR-compliant patient forms.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Sanity</span>
+              <span class="tech-pill">Calendly</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Landing Page 1 ── -->
+      <div class="proj-card" data-cat="land" data-reveal data-delay="1"
+           data-title="NovaSend — Email Tool Landing Page"
+           data-desc="A high-converting SaaS landing page for an email marketing tool. Built to drive free trial signups through social proof, feature breakdown, pricing comparison, and an animated hero."
+           data-feats="Animated hero section|Social proof strip|Feature grid|Pricing toggle|Video testimonials|FAQ accordion|Exit-intent popup|A/B test ready"
+           data-tech="HTML5,CSS3,Vanilla JS,GSAP"
+           data-cat-label="Landing Page"
+           data-cat-class="tag-land"
+           data-prev-class="prev-land">
+        <div class="proj-preview prev-land">
+          <div class="proj-preview-inner" style="align-items:center;justify-content:center;">
+            <div class="px-hero-land" style="width:100%;">
+              <div class="px-land-icon">📧</div>
+              <div style="font-family:var(--f-mono);font-size:.65rem;color:#FB7185;margin-bottom:4px;">NovaSend</div>
+              <div class="px-land-h"></div>
+              <div class="px-land-s"></div>
+              <div class="px-land-btn"></div>
+            </div>
+            <div class="px-row" style="gap:5px;margin-top:8px;">
+              <div style="flex:1;height:8px;background:rgba(244,63,94,.15);border-radius:3px;"></div>
+              <div style="flex:1;height:8px;background:rgba(244,63,94,.1);border-radius:3px;"></div>
+              <div style="flex:1;height:8px;background:rgba(244,63,94,.08);border-radius:3px;"></div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-land">🚀 Landing Page</div>
+          <div class="proj-name">NovaSend — Email Tool Landing</div>
+          <p class="proj-desc">High-converting SaaS landing page with animated hero, pricing toggle, and A/B-test-ready structure.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">GSAP</span>
+              <span class="tech-pill">CSS3</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Landing Page 2 ── -->
+      <div class="proj-card" data-cat="land" data-reveal data-delay="2"
+           data-title="FitForge — Fitness App Launch Page"
+           data-desc="A bold, high-energy landing page for a mobile fitness app pre-launch campaign. Generated 8,400 email sign-ups in 3 weeks using countdown timer, social proof, and waitlist form."
+           data-feats="Countdown timer|Waitlist form|App store badges|Influencer social proof|Feature reveal scroll|Mobile-first design|Open Graph optimised|MailChimp integration"
+           data-tech="React,Framer Motion,Tailwind,Mailchimp"
+           data-cat-label="Landing Page"
+           data-cat-class="tag-land"
+           data-prev-class="prev-land">
+        <div class="proj-preview prev-land">
+          <div class="proj-preview-inner" style="align-items:center;justify-content:center;gap:8px;">
+            <div style="font-size:28px;">💪</div>
+            <div style="font-family:var(--f-mono);font-size:.65rem;color:#FB7185;font-weight:700;">FitForge</div>
+            <div style="display:flex;gap:6px;margin-top:4px;">
+              <div style="background:rgba(244,63,94,.2);border-radius:4px;padding:4px 8px;text-align:center;border:1px solid rgba(244,63,94,.3);">
+                <div style="font-family:var(--f-mono);font-size:.9rem;color:#FB7185;font-weight:700;">14</div>
+                <div style="font-size:.55rem;color:var(--txt3);">days</div>
+              </div>
+              <div style="background:rgba(244,63,94,.2);border-radius:4px;padding:4px 8px;text-align:center;border:1px solid rgba(244,63,94,.3);">
+                <div style="font-family:var(--f-mono);font-size:.9rem;color:#FB7185;font-weight:700;">08</div>
+                <div style="font-size:.55rem;color:var(--txt3);">hours</div>
+              </div>
+              <div style="background:rgba(244,63,94,.2);border-radius:4px;padding:4px 8px;text-align:center;border:1px solid rgba(244,63,94,.3);">
+                <div style="font-family:var(--f-mono);font-size:.9rem;color:#FB7185;font-weight:700;">42</div>
+                <div style="font-size:.55rem;color:var(--txt3);">min</div>
+              </div>
+            </div>
+            <div style="width:80%;height:20px;background:rgba(244,63,94,.25);border-radius:4px;margin-top:4px;border:1px solid rgba(244,63,94,.4);"></div>
+            <div style="font-size:.6rem;color:var(--txt3);">8,400+ on waitlist</div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-land">🚀 Landing Page</div>
+          <div class="proj-name">FitForge — App Pre-launch Page</div>
+          <p class="proj-desc">Bold fitness app launch page with countdown, waitlist form — generated 8,400 sign-ups in 3 weeks.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">Framer</span>
+              <span class="tech-pill">Mailchimp</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Portfolio Site 1 ── -->
+      <div class="proj-card" data-cat="port" data-reveal data-delay="1"
+           data-title="Elara — Photographer Portfolio"
+           data-desc="A cinematic, image-led portfolio for a fine-art photographer. Dark-themed with immersive full-screen gallery, lazy-loading, and custom cursor. Increased inquiry rate by 3×."
+           data-feats="Full-screen gallery|Custom cursor|Lazy loading|Category filtering|Contact lightbox|Print store integration|Instagram feed embed|SEO meta for images"
+           data-tech="HTML5,CSS3,Vanilla JS,GSAP,Squarespace"
+           data-cat-label="Portfolio Website"
+           data-cat-class="tag-port"
+           data-prev-class="prev-port">
+        <div class="proj-preview prev-port">
+          <div class="proj-preview-inner">
+            <div style="font-family:var(--f-mono);font-size:.6rem;color:var(--gold-lt);margin-bottom:6px;letter-spacing:.1em;">ELARA · PHOTOGRAPHY</div>
+            <div class="px-port-grid">
+              <div class="px-port-item" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.15);">🌿</div>
+              <div class="px-port-item" style="background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.1);">🌊</div>
+              <div class="px-port-item" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.12);">🏔️</div>
+              <div class="px-port-item" style="background:rgba(245,158,11,.04);border:1px solid rgba(245,158,11,.08);">🌅</div>
+            </div>
+            <div style="display:flex;gap:6px;margin-top:8px;justify-content:center;">
+              <div style="font-size:.6rem;padding:2px 8px;border-radius:3px;background:rgba(245,158,11,.15);color:var(--gold-lt);">All</div>
+              <div style="font-size:.6rem;padding:2px 8px;border-radius:3px;color:var(--txt3);">Nature</div>
+              <div style="font-size:.6rem;padding:2px 8px;border-radius:3px;color:var(--txt3);">Portrait</div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-port">🎨 Portfolio Website</div>
+          <div class="proj-name">Elara — Photographer Portfolio</div>
+          <p class="proj-desc">Cinematic image-led portfolio with full-screen gallery and custom cursor. Tripled inquiry rate.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">GSAP</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">Squarespace</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Portfolio Site 2 ── -->
+      <div class="proj-card" data-cat="port" data-reveal data-delay="2"
+           data-title="Dev.Folded — Developer Portfolio Template"
+           data-desc="A premium, fully-responsive developer portfolio template built to showcase projects, skills, and experience. Dark-mode first, with animated skill bars, project modals, and a working contact form."
+           data-feats="5 animated sections|Skill progress bars|Project modals|Dark/light toggle|Working contact form|Blog-ready|Resume PDF download|Perfect Lighthouse score"
+           data-tech="HTML5,CSS3,Vanilla JS,EmailJS"
+           data-cat-label="Portfolio Website"
+           data-cat-class="tag-port"
+           data-prev-class="prev-port">
+        <div class="proj-preview prev-port">
+          <div class="proj-preview-inner">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+              <div style="width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--cyan));"></div>
+              <div>
+                <div style="height:5px;width:50px;background:rgba(255,255,255,.2);border-radius:3px;margin-bottom:3px;"></div>
+                <div style="height:4px;width:35px;background:rgba(255,255,255,.1);border-radius:2px;"></div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:.6rem;color:var(--txt3);">React</div>
+                <div style="flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin:0 8px;overflow:hidden;">
+                  <div style="height:100%;width:92%;background:var(--violet);border-radius:2px;"></div>
+                </div>
+                <div style="font-size:.6rem;color:var(--violet-lt);">92%</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:.6rem;color:var(--txt3);">Node</div>
+                <div style="flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin:0 8px;overflow:hidden;">
+                  <div style="height:100%;width:85%;background:var(--cyan);border-radius:2px;"></div>
+                </div>
+                <div style="font-size:.6rem;color:#22D3EE;">85%</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;">
+                <div style="font-size:.6rem;color:var(--txt3);">CSS</div>
+                <div style="flex:1;height:4px;background:rgba(255,255,255,.06);border-radius:2px;margin:0 8px;overflow:hidden;">
+                  <div style="height:100%;width:95%;background:var(--gold);border-radius:2px;"></div>
+                </div>
+                <div style="font-size:.6rem;color:var(--gold-lt);">95%</div>
+              </div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-port">🎨 Portfolio Website</div>
+          <div class="proj-name">Dev.Folded — Dev Portfolio Template</div>
+          <p class="proj-desc">Premium developer portfolio template with animated skill bars, project modals, and perfect Lighthouse score.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">EmailJS</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Crypto 1 ── -->
+      <div class="proj-card" data-cat="crypto" data-reveal data-delay="1"
+           data-title="ChainView — Crypto Portfolio Tracker"
+           data-desc="A real-time crypto portfolio dashboard with live price feeds, PnL tracking, asset allocation charts, and multi-wallet support. Connects to CoinGecko, Binance, and Coinbase APIs."
+           data-feats="Live price WebSocket|Multi-wallet connect|PnL charts|Asset allocation pie|Price alerts|Transaction history|CSV export|Dark/light mode"
+           data-tech="React,WebSocket,CoinGecko API,Recharts,Node.js"
+           data-cat-label="Crypto Dashboard"
+           data-cat-class="tag-crypto"
+           data-prev-class="prev-crypto">
+        <div class="proj-preview prev-crypto">
+          <div class="proj-preview-inner">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <div style="font-family:var(--f-mono);font-size:.65rem;color:#34D399;">ChainView</div>
+              <div style="font-size:.6rem;background:rgba(16,185,129,.15);color:#34D399;padding:2px 6px;border-radius:4px;border:1px solid rgba(16,185,129,.3);">● Live</div>
+            </div>
+            <div class="px-crypto-chart">
+              <div class="px-crypto-header">
+                <div class="px-ticker">BTC/USD</div>
+                <div class="px-price-up">+2.4% ↑</div>
+              </div>
+              <div class="px-spark">
+                <div class="px-spark-bar" style="height:40%;background:rgba(16,185,129,.4);"></div>
+                <div class="px-spark-bar" style="height:55%;background:rgba(16,185,129,.5);"></div>
+                <div class="px-spark-bar" style="height:35%;background:rgba(16,185,129,.4);"></div>
+                <div class="px-spark-bar" style="height:70%;background:rgba(16,185,129,.6);"></div>
+                <div class="px-spark-bar" style="height:60%;background:rgba(16,185,129,.5);"></div>
+                <div class="px-spark-bar" style="height:85%;background:rgba(16,185,129,.7);"></div>
+                <div class="px-spark-bar" style="height:75%;background:rgba(16,185,129,.8);"></div>
+                <div class="px-spark-bar" style="height:90%;background:rgba(16,185,129,.9);"></div>
+              </div>
+              <div class="px-coin-row"><div class="px-coin" style="background:#F7931A;"></div><div class="px-coin-line" style="background:rgba(247,147,26,.3);width:60%;"></div><div class="px-coin-val">$42,180</div></div>
+              <div class="px-coin-row"><div class="px-coin" style="background:#627EEA;"></div><div class="px-coin-line" style="background:rgba(98,126,234,.3);width:40%;"></div><div class="px-coin-val">$2,240</div></div>
+            </div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-crypto">₿ Crypto Dashboard</div>
+          <div class="proj-name">ChainView — Portfolio Tracker</div>
+          <p class="proj-desc">Real-time crypto dashboard with live WebSocket feeds, multi-wallet support, and PnL charts.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">React</span>
+              <span class="tech-pill">WebSocket</span>
+              <span class="tech-pill">CoinGecko</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Crypto 2 ── -->
+      <div class="proj-card" data-cat="crypto" data-reveal data-delay="2"
+           data-title="DeFi Compass — DeFi Analytics Platform"
+           data-desc="A DeFi analytics and yield-tracking platform. Aggregates APY rates across 20+ protocols, displays impermanent loss calculators, and shows on-chain wallet activity via Etherscan API."
+           data-feats="20+ DeFi protocols|APY comparator|IL calculator|On-chain activity|Gas tracker|Protocol risk scores|Wallet watchlist|ENS support"
+           data-tech="Next.js,Ethers.js,Etherscan API,D3.js,TailwindCSS"
+           data-cat-label="Crypto Dashboard"
+           data-cat-class="tag-crypto"
+           data-prev-class="prev-crypto">
+        <div class="proj-preview prev-crypto">
+          <div class="proj-preview-inner">
+            <div style="font-family:var(--f-mono);font-size:.6rem;color:#34D399;margin-bottom:6px;">DeFi Compass · APY Tracker</div>
+            <div style="display:flex;flex-direction:column;gap:4px;">
+              <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:5px;padding:5px 8px;">
+                <div style="font-size:.65rem;color:var(--txt2);">Uniswap V3</div>
+                <div style="font-family:var(--f-mono);font-size:.7rem;color:#34D399;font-weight:700;">24.5%</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(16,185,129,.04);border:1px solid rgba(16,185,129,.1);border-radius:5px;padding:5px 8px;">
+                <div style="font-size:.65rem;color:var(--txt2);">Aave USDC</div>
+                <div style="font-family:var(--f-mono);font-size:.7rem;color:#34D399;font-weight:700;">8.2%</div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(16,185,129,.03);border:1px solid rgba(16,185,129,.08);border-radius:5px;padding:5px 8px;">
+                <div style="font-size:.65rem;color:var(--txt2);">Curve 3pool</div>
+                <div style="font-family:var(--f-mono);font-size:.7rem;color:#34D399;font-weight:700;">6.8%</div>
+              </div>
+            </div>
+            <div style="margin-top:6px;font-size:.55rem;color:var(--txt3);">Gas: 18 gwei · Updated 12s ago</div>
+          </div>
+          <div class="proj-overlay"><div class="overlay-btn">View case study →</div></div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-cat-tag tag-crypto">₿ Crypto Dashboard</div>
+          <div class="proj-name">DeFi Compass — Yield Tracker</div>
+          <p class="proj-desc">DeFi analytics platform aggregating APY rates across 20+ protocols with impermanent loss calculator.</p>
+          <div class="proj-footer">
+            <div class="proj-tech">
+              <span class="tech-pill">Next.js</span>
+              <span class="tech-pill">Ethers.js</span>
+              <span class="tech-pill">D3.js</span>
+            </div>
+            <div class="proj-arrow">→</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /portfolio-grid -->
   </div>
 </section>
 
