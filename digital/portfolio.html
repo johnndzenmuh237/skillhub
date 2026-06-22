@@ -1104,143 +1104,146 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
 
 <!-- ════════════════════════════════════════════════════════════
+
      HERO
+
 ════════════════════════════════════════════════════════════ -->
+
 <section class="hero" id="home">
+
   <div class="hero-glow-a"></div>
+
   <div class="hero-glow-b"></div>
+
   <div class="hero-grid"></div>
+
+
 
   <div class="hero-inner">
 
-    <!-- ══════════ LEFT: Text ══════════ -->
-    <div class="hero-text">
+    <!-- Text -->
+
+    <div>
+
       <div class="hero-eyebrow">Available for new projects</div>
 
       <h1 class="hero-title">
+
         I build web products<br />
+
         that <em>convert &amp; scale</em>
+
       </h1>
 
       <p class="hero-sub">
+
         Full-stack web designer &amp; developer specialising in SaaS platforms,
+
         business sites, high-converting landing pages, portfolio sites, and
+
         crypto dashboards. Pixel-perfect. Performance-first.
+
       </p>
 
       <div class="hero-actions">
+
         <a href="#work"    class="btn-primary">View my work <span>↓</span></a>
+
         <a href="#contact" class="btn-outline">Start a project</a>
+
       </div>
 
       <div class="hero-trust">
+
         <div class="hero-trust-dots">
+
           <div class="hero-dot" style="background:linear-gradient(135deg,#7C3AED,#A78BFA);">A</div>
+
           <div class="hero-dot" style="background:linear-gradient(135deg,#06B6D4,#0891B2);">M</div>
+
           <div class="hero-dot" style="background:linear-gradient(135deg,#10B981,#059669);">S</div>
+
           <div class="hero-dot" style="background:linear-gradient(135deg,#F43F5E,#DC2626);">R</div>
+
         </div>
+
         <span>Trusted by <strong style="color:var(--txt);">40+ clients</strong> across 12 countries</span>
+
       </div>
+
     </div>
 
-    <!-- ══════════ RIGHT: Picture column ══════════ -->
-    <div class="hero-picture-col">
 
-      <!-- Floating stat chips -->
-      <div class="hero-stat-chips">
-        <div class="hero-chip">
-          <span class="hero-chip-icon">🏆</span>
-          <div>
-            <div class="hero-chip-val">40+</div>
-            <div class="hero-chip-lbl">Projects delivered</div>
-          </div>
-        </div>
-        <div class="hero-chip">
-          <span class="hero-chip-icon">🌍</span>
-          <div>
-            <div class="hero-chip-val">12</div>
-            <div class="hero-chip-lbl">Countries</div>
-          </div>
-        </div>
-        <div class="hero-chip">
-          <span class="hero-chip-icon">⚡</span>
-          <div>
-            <div class="hero-chip-val">100%</div>
-            <div class="hero-chip-lbl">On-time delivery</div>
-          </div>
-        </div>
+
+    <!-- Floating category mini-cards -->
+
+    <div class="hero-showcase">
+
+      <div class="mini-card" onclick="scrollToWork('saas')">
+
+        <div class="mc-icon">⚡</div>
+
+        <div class="mc-label">SaaS Web Apps</div>
+
+        <div class="mc-count">5 projects</div>
+
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
+
       </div>
 
-      <!-- Photo frame -->
-      <div class="hero-photo-frame">
+      <div class="mini-card" onclick="scrollToWork('biz')">
 
-        <!--
-        ╔═════════════════════════════════════════════════════╗
-        ║  SWAP THIS PLACEHOLDER WITH YOUR PHOTO:            ║
-        ║  Delete the <div class="hero-photo-placeholder">   ║
-        ║  block and replace with:                           ║
-        ║                                                     ║
-        ║  <img src="images/hero.png"                         ║
-        ║       alt="hero"                              ║
-        ║       class="hero-photo-img">                      ║
-        ║                                                     ║
-        ║  Best results: portrait crop, 3:4 ratio,           ║
-        ║  subject centred, top-aligned                      ║
-        ╚═════════════════════════════════════════════════════╝
-        -->
-        <div class="hero-photo-placeholder">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
-               xmlns="http://www.w3.org/2000/svg">
-            <circle cx="12" cy="8" r="4"/>
-            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          </svg>
-          <span>Your photo here<br/>Portrait · 3:4 ratio recommended</span>
-        </div>
+        <div class="mc-icon">🏢</div>
 
-        <!-- Availability badge -->
-        <div class="hero-badge-avail">Available for hire</div>
+        <div class="mc-label">Business Sites</div>
+
+        <div class="mc-count">6 projects</div>
+
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
+
       </div>
 
-      <!-- Mini-cards grid -->
-      <div class="hero-showcase">
-        <div class="mini-card" onclick="scrollToWork('saas')">
-          <div class="mc-icon">⚡</div>
-          <div class="mc-label">SaaS Web Apps</div>
-          <div class="mc-count">5 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:90%;"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('biz')">
-          <div class="mc-icon">🏢</div>
-          <div class="mc-label">Business Sites</div>
-          <div class="mc-count">6 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:75%;background:linear-gradient(90deg,var(--cyan),var(--green));"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('land')">
-          <div class="mc-icon">🚀</div>
-          <div class="mc-label">Landing Pages</div>
-          <div class="mc-count">8 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
-        </div>
-        <div class="mini-card" onclick="scrollToWork('port')">
-          <div class="mc-icon">🎨</div>
-          <div class="mc-label">Portfolio Sites</div>
-          <div class="mc-count">4 projects</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
-        </div>
-        <div class="mini-card span2" onclick="scrollToWork('crypto')">
-          <div class="mc-icon">₿</div>
-          <div class="mc-label">Crypto Dashboards</div>
-          <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
-          <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
-        </div>
+      <div class="mini-card" onclick="scrollToWork('land')">
+
+        <div class="mc-icon">🚀</div>
+
+        <div class="mc-label">Landing Pages</div>
+
+        <div class="mc-count">8 projects</div>
+
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:85%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
+
       </div>
 
-    </div><!-- /hero-picture-col -->
+      <div class="mini-card" onclick="scrollToWork('port')">
+
+        <div class="mc-icon">🎨</div>
+
+        <div class="mc-label">Portfolio Sites</div>
+
+        <div class="mc-count">4 projects</div>
+
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:65%;background:linear-gradient(90deg,var(--gold),#F97316);"></div></div>
+
+      </div>
+
+      <div class="mini-card span2" onclick="scrollToWork('crypto')">
+
+        <div class="mc-icon">₿</div>
+
+        <div class="mc-label">Crypto Dashboards</div>
+
+        <div class="mc-count">3 projects · DeFi · Web3 · Real-time data</div>
+
+        <div class="mc-bar"><div class="mc-bar-fill" style="width:80%;background:linear-gradient(90deg,var(--green),var(--cyan));"></div></div>
+
+      </div>
+
+    </div>
 
   </div>
-</section>
 
+</section>
 
 <!-- ════════════════════════════════════════════════════════════
      STATS
