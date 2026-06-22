@@ -1127,39 +1127,50 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
 </footer>
 
 <script>
-// Mobile nav toggle
+// ── Mobile nav toggle ──────────────────────────────────────────
 const menuToggle = document.getElementById('menuToggle');
-const navLinks = document.getElementById('navLinks');
-const menuIcon = menuToggle.querySelector('i');
+const navLinks   = document.getElementById('navLinks');
+const menuIcon   = menuToggle.querySelector('i');
 
-function openMenu(){
+function openMenu() {
   navLinks.classList.add('open');
   document.body.classList.add('menu-open');
-  menuIcon.classList.remove('fa-bars');
-  menuIcon.classList.add('fa-times');
+  menuIcon.classList.replace('fa-bars', 'fa-times');
   menuToggle.setAttribute('aria-expanded', 'true');
+  // trap scroll on body but allow menu to scroll
+  document.body.style.overflow = 'hidden';
 }
 
-function closeMenu(){
+function closeMenu() {
   navLinks.classList.remove('open');
   document.body.classList.remove('menu-open');
-  menuIcon.classList.remove('fa-times');
-  menuIcon.classList.add('fa-bars');
+  menuIcon.classList.replace('fa-times', 'fa-bars');
   menuToggle.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
 }
 
 menuToggle.addEventListener('click', () => {
-  const isOpen = navLinks.classList.contains('open');
-  if (isOpen) {
+  navLinks.classList.contains('open') ? closeMenu() : openMenu();
+});
+
+// Close on nav link click
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+// Close on outside tap (tap the dimmed page area)
+document.addEventListener('click', (e) => {
+  if (navLinks.classList.contains('open') &&
+      !navLinks.contains(e.target) &&
+      !menuToggle.contains(e.target)) {
     closeMenu();
-  } else {
-    openMenu();
   }
 });
 
-navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks.classList.contains('open')) closeMenu();
+});
 
-// Tab buttons (cosmetic)
+// ── Tab buttons ────────────────────────────────────────────────
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -1167,14 +1178,17 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Newsletter form
+// ── Newsletter form ────────────────────────────────────────────
 document.querySelector('.newsletter-form button').addEventListener('click', function() {
   const input = document.querySelector('.newsletter-form input');
-  if(input.value && input.value.includes('@')) {
+  if (input.value && input.value.includes('@')) {
     this.textContent = '✓ Sent!';
     this.style.background = 'var(--green)';
     input.value = '';
-    setTimeout(() => { this.textContent = 'Get Free Pack'; this.style.background = ''; }, 3000);
+    setTimeout(() => {
+      this.textContent = 'Get Free Pack';
+      this.style.background = '';
+    }, 3000);
   } else {
     input.style.borderColor = '#ef4444';
     setTimeout(() => { input.style.borderColor = ''; }, 2000);
