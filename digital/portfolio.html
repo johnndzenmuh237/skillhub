@@ -471,6 +471,25 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
 }
  
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+  .hero-picture-col{
+    max-width:400px;
+    margin:0 auto;
+    width:100%;
+  }
+  .hero-sub{max-width:100%;}
+}
+@media(max-width:500px){
+  .hero{padding:60px 16px 48px;}
+  .hero-stat-chips{flex-wrap:wrap;gap:8px;}
+  .hero-chip+.hero-chip{border-left:none;padding-left:0;}
+  .hero-title{font-size:1.9rem;}
+}
 /* ═══════════════════════════════════════════════════════════════
    STATS STRIP
 ═══════════════════════════════════════════════════════════════ */
