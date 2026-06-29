@@ -170,6 +170,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 /* ═══════════════════════════════════════════════════════════════
    HERO
 ═══════════════════════════════════════════════════════════════ */
+
 .hero{
   min-height:100vh;
   display:flex;align-items:center;
@@ -201,9 +202,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   max-width:1200px;margin:0 auto;padding:0 28px;
   position:relative;z-index:1;
   display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;
+  gap:clamp(40px, 6vw, 64px);align-items:center;
 }
-/* Left */
+
+/* ── LEFT — unchanged ── */
 .hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
   padding:5px 14px;border-radius:var(--r-full);
@@ -259,218 +261,115 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 }
 .hero-dot:first-child{margin-left:0;}
 
-/* Right — floating category cards */
-.hero-showcase{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:14px;position:relative;
+/* ── RIGHT — picture column (reshaped) ── */
+.hero-picture-col{
+  position:relative;
 }
-.hero-showcase::before{
-  content:'';
-  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
-  width:280px;height:280px;border-radius:50%;
-  background:radial-gradient(circle,rgba(124,58,237,.2),transparent 70%);
+
+/* Soft, rotated "stacked photo" backdrop instead of a hard triangle —
+   reads as an intentional layered-card effect rather than a clipped
+   corner shape, and scales cleanly at every size since it's all %. */
+.hero-photo-accent{
+  position:absolute;
+  right:-5%;bottom:-6%;
+  width:78%;height:78%;
+  border-radius:28px;
+  background:linear-gradient(135deg,var(--rose),var(--gold));
+  opacity:.55;
+  transform:rotate(-5deg);
+  z-index:0;
   pointer-events:none;
 }
-.mini-card{
-  background:var(--bg3);border:1px solid var(--border);
-  border-radius:var(--r-lg);padding:18px;
-  cursor:pointer;
-  transition:all .3s var(--ease);
-  position:relative;overflow:hidden;
-}
-.mini-card::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(135deg,var(--violet-gl),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.mini-card:hover{
-  border-color:rgba(124,58,237,.4);
-  transform:translateY(-4px);
-  box-shadow:0 12px 40px rgba(124,58,237,.2);
-}
-.mini-card:hover::after{opacity:1;}
-.mini-card.span2{grid-column:1/-1;}
-.mc-icon{font-size:24px;margin-bottom:10px;}
-.mc-label{
-  font-family:var(--f-display);font-size:.8rem;font-weight:700;
-  color:var(--txt);margin-bottom:4px;
-}
-.mc-count{
-  font-family:var(--f-mono);font-size:.7rem;
-  color:var(--txt3);
-}
-.mc-bar{height:3px;background:var(--bg4);border-radius:2px;margin-top:10px;overflow:hidden;}
-.mc-bar-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--violet),var(--cyan));}
-
-  
-/* ── RIGHT: Picture column ── */
-
-.hero-picture-col{position:relative;}
-
-
 
 .hero-photo-frame{
-
-  position:relative;width:100%;
-
-  aspect-ratio:4/4.8;
-
-  border-radius:28px 28px 8px 28px;
-
-  overflow:hidden;
-
-  background:linear-gradient(160deg,rgba(124,58,237,.2),rgba(6,182,212,.12));
-
-  border:1px solid var(--border);
-
-}
-
-.hero-photo-frame::before{
-
-  content:'';position:absolute;inset:0;z-index:2;
-
-  border-radius:inherit;pointer-events:none;
-
-  background:linear-gradient(135deg,var(--violet),var(--cyan),var(--green));
-
-  opacity:.5;padding:1.5px;
-
-  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
-
-  -webkit-mask-composite:xor;
-
-  mask-composite:exclude;
-
-}
-
-.hero-photo-accent{
-
-  position:absolute;right:-24px;bottom:-24px;
-
-  width:120px;height:120px;
-
-  background:linear-gradient(135deg,var(--rose),var(--gold));
-
-  clip-path:polygon(100% 0,100% 100%,0 100%);
-
-  opacity:.8;z-index:0;
-
-}
-
-.hero-photo-img{
-
   position:relative;z-index:1;
-
+  width:100%;
+  aspect-ratio:4/4.6;
+  border-radius:28px 28px 28px 6px;   /* one deliberately squared corner — the signature detail */
+  overflow:hidden;
+  background:linear-gradient(160deg,rgba(124,58,237,.2),rgba(6,182,212,.12));
+  border:1px solid var(--border);
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.55);
+  transition:transform .4s ease, box-shadow .4s ease;
+}
+.hero-photo-frame::before{
+  content:'';position:absolute;inset:0;z-index:2;
+  border-radius:inherit;pointer-events:none;
+  background:linear-gradient(135deg,var(--violet),var(--cyan),var(--green));
+  opacity:.5;padding:1.5px;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+}
+.hero-photo-img{
+  position:relative;z-index:1;
   width:100%;height:100%;
-
   object-fit:cover;object-position:top center;
-
   display:block;
-
 }
 
-
+/* Subtle tilt-on-hover, desktop pointer only, and skipped for
+   reduced-motion below */
+@media (hover:hover) and (pointer:fine){
+  .hero-picture-col:hover .hero-photo-frame{
+    transform:rotate(-1deg) scale(1.015);
+    box-shadow:0 30px 70px -22px rgba(0,0,0,.6);
+  }
+}
 
 /* Stat chips bar inside photo frame */
-
 .hero-stat-chips{
-
   position:absolute;left:14px;right:14px;bottom:14px;z-index:3;
-
   display:flex;align-items:center;justify-content:space-around;
-
   background:rgba(10,10,18,.82);
-
   border:1px solid var(--border);
-
   backdrop-filter:blur(14px);
-
   border-radius:14px;
-
   padding:12px 14px;
-
+  flex-wrap:wrap;
+  gap:8px;
 }
-
 .hero-chip{display:flex;align-items:center;gap:8px;}
-
 .hero-chip-icon{font-size:1rem;line-height:1;}
-
 .hero-chip-val{
-
   font-family:var(--font-display);
-
   font-size:1rem;font-weight:700;line-height:1;
-
 }
-
 .hero-chip-lbl{font-size:.66rem;color:var(--txt-dim);white-space:nowrap;}
-
 .hero-chip+.hero-chip{
-
   padding-left:14px;
-
   border-left:1px solid var(--border);
-
 }
-
-
 
 /* Mini-cards grid below photo */
-
 .hero-showcase{
-
   display:grid;
-
   grid-template-columns:repeat(2,1fr);
-
   gap:10px;margin-top:14px;
-
 }
-
 .mini-card{
-
   background:var(--surface);
-
   border:1px solid var(--border);
-
   border-radius:12px;
-
   padding:12px 14px;
-
   cursor:pointer;
-
   transition:background .2s,transform .2s,border-color .2s;
-
 }
-
 .mini-card:hover{
-
   background:var(--surface-strong);
-
   border-color:rgba(255,255,255,.18);
-
   transform:translateY(-2px);
-
 }
-
 .mini-card.span2{grid-column:1/-1;}
-
 .mc-icon{font-size:1rem;margin-bottom:5px;}
-
 .mc-label{font-size:.82rem;font-weight:600;margin-bottom:2px;color:var(--txt);}
-
 .mc-count{font-size:.7rem;color:var(--txt-dim);margin-bottom:8px;}
-
 .mc-bar{height:3px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden;}
-
 .mc-bar-fill{
-
   height:100%;border-radius:99px;
-
   background:linear-gradient(90deg,var(--violet),var(--violet-light));
-
 }
- 
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .hero-inner{
@@ -484,11 +383,39 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
   }
   .hero-sub{max-width:100%;}
 }
+
+@media(max-width:680px){
+  .hero-photo-frame{
+    aspect-ratio:4/4.2;            /* a touch shorter so it doesn't dominate the screen */
+    border-radius:24px 24px 24px 6px;
+  }
+  .hero-photo-accent{
+    right:-4%;bottom:-5%;
+    border-radius:22px;
+  }
+  .hero-showcase{gap:8px;}
+  .mini-card{padding:10px 12px;}
+}
+
 @media(max-width:500px){
   .hero{padding:60px 16px 48px;}
-  .hero-stat-chips{flex-wrap:wrap;gap:8px;}
+  .hero-stat-chips{
+    flex-wrap:wrap;gap:8px;
+    justify-content:flex-start;
+  }
   .hero-chip+.hero-chip{border-left:none;padding-left:0;}
   .hero-title{font-size:1.9rem;}
+}
+
+@media (max-width:380px){
+  .hero-showcase{grid-template-columns:1fr;}  /* stack mini-cards on very small phones */
+  .mini-card.span2{grid-column:auto;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  .hero-photo-frame,.mini-card{ transition:none; }
+  .hero-picture-col:hover .hero-photo-frame{ transform:none; box-shadow:0 24px 60px -24px rgba(0,0,0,.55); }
+  .mini-card:hover{ transform:none; }
 }
 /* ═══════════════════════════════════════════════════════════════
    STATS STRIP
