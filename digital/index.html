@@ -110,6 +110,48 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif;line-height:1.2;}
 .btn-amber:hover{background:#d97706;transform:translateY(-2px);}
 .menu-toggle{display:none;background:none;border:none;color:var(--ink);font-size:1.4rem;cursor:pointer;padding:4px;}
 
+
+/* ═══════════════════════════════════════════════════════════════
+   TICKER (sliding marquee)
+═══════════════════════════════════════════════════════════════ */
+.ticker-wrap {
+  background: rgba(124, 58, 237, 0.12);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.25);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-track:hover { animation-play-state: paused; }
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 32px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--violet-lt);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: var(--f-mono);
+}
+
+.ticker-sep {
+  color: rgba(124, 58, 237, 0.5);
+  font-size: 1rem;
+}
+
 /* ─── HERO ─── */
 .hero{
   background:linear-gradient(160deg,var(--ink) 0%,var(--ink2) 60%,#0f2438 100%);
@@ -664,53 +706,98 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow"><span class="dot"></span>Live &amp; Accepting New Students</div>
-    <h1>Build Skills. <em>Launch Businesses.</em> Grow Faster With Tech &amp; AI</h1>
-    <p class="hero-sub">
-      Whether you're looking to grow your business, learn high-income digital skills, or access ready-made digital products — AI Skills Hub gives you the <strong>tools, training, and resources</strong> to succeed.
-    </p>
-    <div class="hero-feature-list">
-      <span class="chip"><i class="fas fa-check"></i> Premium Courses</span>
-      <span class="chip"><i class="fas fa-check"></i> Website Templates</span>
-      <span class="chip"><i class="fas fa-check"></i> AI Resources</span>
-      <span class="chip"><i class="fas fa-check"></i> E-books</span>
-      <span class="chip"><i class="fas fa-check"></i> Automation Tools</span>
-      <span class="chip"><i class="fas fa-check"></i> Software Solutions</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Skills Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="aiskillshub-hero.css" />
+</head>
+<body>
+
+  <!-- ═══ TICKER ═══ -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span class="ticker-item">Premium Courses <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Website Templates <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">AI Resources <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">E-books &amp; Guides <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Automation Tools <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Software Solutions <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">10K+ Downloads <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">4.9 Star Rated <span class="ticker-sep">✦</span></span>
+      <!-- duplicate set for seamless loop -->
+      <span class="ticker-item">Premium Courses <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Website Templates <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">AI Resources <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">E-books &amp; Guides <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Automation Tools <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">Software Solutions <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">10K+ Downloads <span class="ticker-sep">✦</span></span>
+      <span class="ticker-item">4.9 Star Rated <span class="ticker-sep">✦</span></span>
     </div>
+  </div>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>Live &amp; Accepting New Students
+      </div>
+
+      <h1>Build Skills. <em>Launch Businesses.</em> Grow Faster With Tech &amp; AI</h1>
+
+      <p class="hero-sub">
+        Whether you're looking to grow your business, learn high-income digital skills,
+        or access ready-made digital products — AI Skills Hub gives you the
+        <strong>tools, training, and resources</strong> to succeed.
+      </p>
+
+      <div class="hero-feature-list">
+        <span class="chip"><i class="fas fa-check"></i> Premium Courses</span>
+        <span class="chip"><i class="fas fa-check"></i> Website Templates</span>
+        <span class="chip"><i class="fas fa-check"></i> AI Resources</span>
+        <span class="chip"><i class="fas fa-check"></i> E-books</span>
+        <span class="chip"><i class="fas fa-check"></i> Automation Tools</span>
+        <span class="chip"><i class="fas fa-check"></i> Software Solutions</span>
+      </div>
+
     <div class="hero-buttons">
       <a href="ebooks.html" class="btn-hero-primary"><i class="fas fa-bolt"></i>Browse Products</a>
       <a href="courses.html" class="btn-hero-secondary"><i class="fas fa-graduation-cap"></i>Explore Courses</a>
        <a href="portfolio.html" class="btn-primary"><i class="fas fa-th-large"></i>Portfolio</a> 
     </div>
   </div>
-
-  <div class="hero-visual">
-    <div class="hero-card-wrap">
-      <div class="hero-img-wrap">
-        <img src="images/hero.png" alt="AI Skills Hub Hero">
-      </div>
-      <div class="float-badge b1">
-        <span class="b-icon">🚀</span>
-        <div><strong>10K+ Downloads</strong><span>Trusted worldwide</span></div>
-      </div>
-      <div class="float-badge b2">
-        <span class="b-icon">⭐</span>
-        <div><strong>4.9 / 5.0</strong><span>Top rated platform</span></div>
+    <div class="hero-visual">
+      <div class="hero-card-wrap">
+        <div class="hero-img-wrap">
+          <!-- Replace with your actual image -->
+          <img src="images/hero.png" alt="AI Skills Hub Hero" />
+        </div>
+        <div class="float-badge b1">
+          <span class="b-icon">🚀</span>
+          <div><strong>10K+ Downloads</strong><span>Trusted worldwide</span></div>
+        </div>
+        <div class="float-badge b2">
+          <span class="b-icon">⭐</span>
+          <div><strong>4.9 / 5.0</strong><span>Top rated platform</span></div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ STATS BAR ═══ -->
-<div class="stats-bar">
-  <div class="stat-item"><h2><span>10K</span>+</h2><p>Downloads</p></div>
-  <div class="stat-item"><h2><span>5K</span>+</h2><p>Students</p></div>
-  <div class="stat-item"><h2><span>4.9</span>★</h2><p>Avg Rating</p></div>
-  <div class="stat-item"><h2><span>100</span>+</h2><p>Products</p></div>
-</div>
+  <!-- ═══ STATS BAR ═══ -->
+  <div class="stats-bar">
+    <div class="stat-item"><h2><span>10K</span>+</h2><p>Downloads</p></div>
+    <div class="stat-item"><h2><span>5K</span>+</h2><p>Students</p></div>
+    <div class="stat-item"><h2><span>4.9</span>★</h2><p>Avg Rating</p></div>
+    <div class="stat-item"><h2><span>100</span>+</h2><p>Products</p></div>
+  </div>
+
 
 <!-- ═══ WHAT WE OFFER ═══ -->
 <section class="offer-section">
