@@ -785,57 +785,133 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;}
 
 /* ════════════════════════════════════════════════════════════
    SERVICES
+   — Drop this in place of your current SERVICES block.
+   — Variables (--surface, --border, --violet-light, etc.) are
+     assumed to already exist in your :root, unchanged.
 ════════════════════════════════════════════════════════════ */
+
 .services-grid{
-  display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; margin-top:44px;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:clamp(16px, 2vw, 22px);
+  margin-top:44px;
 }
+
 .svc-card{
-  position:relative; display:flex; flex-direction:column;
-  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-md);
-  padding:26px 22px;
-  transition:transform .25s ease, border-color .25s ease, background .25s ease;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%;                 /* fills the grid row so every card in a row matches height */
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:clamp(22px, 3vw, 26px) clamp(18px, 2.5vw, 22px);
+  transition:transform .25s ease, border-color .25s ease,
+             background .25s ease, box-shadow .25s ease;
 }
-.svc-card:hover{ transform:translateY(-4px); border-color:rgba(255,255,255,.18); background:var(--surface-strong); }
+
+.svc-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.18);
+  background:var(--surface-strong);
+  box-shadow:0 16px 32px -16px rgba(0,0,0,.45);
+}
+
 .svc-icon{
   width:46px; height:46px; border-radius:13px; flex-shrink:0;
   display:flex; align-items:center; justify-content:center;
-  font-size:1.2rem; margin-bottom:16px;
+  font-size:1.2rem; line-height:1; margin-bottom:16px;
+  transition:transform .25s ease;
 }
+.svc-card:hover .svc-icon{ transform:scale(1.06); }
+
 .svc-icon-svg{ width:22px; height:22px; }
-.svc-title{ font-family:var(--font-display); font-size:1.05rem; font-weight:700; margin-bottom:8px; }
-.svc-desc{ font-size:.86rem; color:var(--txt-dim); margin-bottom:16px; }
-.svc-features{ display:flex; flex-direction:column; gap:7px; }
-.svc-feat{ font-size:.78rem; color:var(--txt-dim); padding-left:15px; position:relative; }
+
+.svc-title{
+  font-family:var(--font-display);
+  font-size:1.05rem; font-weight:700;
+  margin-bottom:8px;
+  line-height:1.3;
+}
+
+.svc-desc{
+  font-size:.86rem;
+  color:var(--txt-dim);
+  margin-bottom:16px;
+  line-height:1.55;
+}
+
+.svc-features{
+  display:flex; flex-direction:column; gap:7px;
+}
+.svc-feat{
+  font-size:.78rem; color:var(--txt-dim);
+  padding-left:15px; position:relative;
+  line-height:1.4;
+}
 .svc-feat::before{
   content:''; position:absolute; left:0; top:7px;
-  width:5px; height:5px; border-radius:50%; background:var(--violet-light);
+  width:5px; height:5px; border-radius:50%;
+  background:var(--violet-light);
 }
-.svc-nav-btn{
-  margin-top:18px; display:inline-flex; align-items:center; gap:6px;
-  font-size:.82rem; font-weight:600; color:var(--violet-light);
-  padding-top:14px; border-top:1px dashed var(--border);
-}
-.svc-nav-btn svg{ width:11px; height:11px; transition:transform .2s ease; }
-.svc-nav-btn:hover svg{ transform:translateX(3px); }
 
 /* compatibility badges (Ethereum / wallet / etc.) shown on chain-related cards */
-.tech-badges{ display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+.tech-badges{
+  display:flex; flex-wrap:wrap; gap:7px;
+  margin-top:14px;
+}
 .tech-badge{
   display:inline-flex; align-items:center; gap:6px;
   font-size:.7rem; font-weight:500; color:var(--txt-dim);
   background:rgba(255,255,255,.04); border:1px solid var(--border);
   padding:5px 10px 5px 7px; border-radius:999px;
+  white-space:nowrap;
 }
 .tb-icon{ width:13px; height:13px; flex-shrink:0; }
 
+/* Pinned to the bottom of the card via margin-top:auto — this is what keeps
+   every "View Demo Work" link sitting on the same baseline across a row,
+   no matter how much (or how little) content a card has above it. */
+.svc-nav-btn{
+  margin-top:auto;
+  display:inline-flex; align-items:center; gap:6px;
+  font-size:.82rem; font-weight:600; color:var(--violet-light);
+  padding-top:14px; border-top:1px dashed var(--border);
+  transition:color .2s ease;
+}
+.svc-nav-btn svg{ width:11px; height:11px; transition:transform .2s ease; }
+.svc-nav-btn:hover svg{ transform:translateX(3px); }
+.svc-nav-btn:focus-visible{
+  outline:2px solid var(--violet-light);
+  outline-offset:4px;
+  border-radius:4px;
+}
+
+/* ── Responsive breakpoints ── */
+
 @media (max-width:1024px){
   .services-grid{ grid-template-columns:repeat(2, 1fr); }
+
+  /* If the total number of cards is odd, the very last card winds up
+     alone on its row. This selector only fires in that exact case
+     (last child AND an odd position) and stretches it full-width
+     instead of leaving it stranded on one side. Add/remove cards
+     freely — this adapts on its own. */
+  .svc-card:nth-last-child(1):nth-child(odd){
+    grid-column:1 / -1;
+  }
 }
+
 @media (max-width:680px){
-  .services-grid{ grid-template-columns:1fr; }
+  .services-grid{ grid-template-columns:1fr; gap:14px; }
+  .svc-card:nth-last-child(1):nth-child(odd){ grid-column:auto; }
   .section-header-row{ align-items:flex-start; }
 }
 
+@media (prefers-reduced-motion: reduce){
+  .svc-card, .svc-icon, .svc-nav-btn svg{ transition:none; }
+  .svc-card:hover{ transform:none; }
+}
 
 /* ═══════════════════════════════════════════════════════════════
    PROCESS SECTION
