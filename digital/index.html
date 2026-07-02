@@ -151,6 +151,149 @@ h1,h2,h3,h4{font-family:'Syne',sans-serif;line-height:1.2;}
   color: rgba(124, 58, 237, 0.5);
   font-size: 1rem;
 }
+* ════════════════════════════════════════════
+   TABLET  769 – 1024 px
+════════════════════════════════════════════ */
+@media(min-width:769px) and (max-width:1024px){
+  .navbar{padding:0 32px;}
+  .hero{padding:80px 32px 60px;gap:40px;min-height:auto;}
+  .stats-bar{padding:36px 32px;}
+  .stat-item{padding:0 32px;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:56px 32px 28px;}
+}
+
+/* ════════════════════════════════════════════
+   MOBILE  ≤ 768 px
+════════════════════════════════════════════ */
+@media(max-width:768px){
+
+  /* ── Announcement ── */
+  .announcement{font-size:0.75rem;padding:9px 16px;}
+
+  /* ── Navbar ── */
+  .navbar{
+    padding:0 20px;height:62px;
+    position:sticky;top:0;z-index:1000;
+  }
+
+  /* Hide desktop links */
+  .nav-links{display:none !important;}
+
+  /* Hide desktop CTA button */
+  .nav-right .btn-primary{display:none;}
+
+  /* Show hamburger */
+  .menu-toggle{display:flex !important;align-items:center;justify-content:center;}
+
+  /* ── MOBILE DRAWER ── */
+  .mobile-drawer{
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:999;
+
+    /* Invisible + off-screen by default */
+    visibility:hidden;
+    pointer-events:none;
+  }
+
+  /* Backdrop overlay */
+  .mobile-drawer::before{
+    content:'';
+    position:absolute;inset:0;
+    background:rgba(7,17,26,0.6);
+    backdrop-filter:blur(4px);
+    opacity:0;
+    transition:opacity 0.28s ease;
+  }
+
+  /* Slide-in panel */
+  .drawer-panel{
+    position:absolute;
+    top:0;right:0;
+    width:82%;max-width:320px;
+    height:100%;
+    background:#fff;
+    box-shadow:-8px 0 48px rgba(7,17,26,0.25);
+    transform:translateX(100%);
+    transition:transform 0.32s cubic-bezier(0.4,0,0.2,1);
+    overflow-y:auto;
+    display:flex;flex-direction:column;
+  }
+
+  /* OPEN STATE */
+  .mobile-drawer.is-open{
+    visibility:visible;
+    pointer-events:auto;
+  }
+  .mobile-drawer.is-open::before{opacity:1;}
+  .mobile-drawer.is-open .drawer-panel{transform:translateX(0);}
+
+  /* Drawer header */
+  .drawer-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 24px;border-bottom:1px solid var(--border);
+    position:sticky;top:0;background:#fff;z-index:1;
+  }
+  .drawer-logo{
+    font-family:'Syne',sans-serif;font-weight:800;font-size:1.05rem;
+    color:var(--ink);display:flex;align-items:center;gap:8px;
+  }
+  .drawer-logo .logo-icon{
+    width:28px;height:28px;background:linear-gradient(135deg,var(--volt),var(--volt2));
+    border-radius:7px;display:flex;align-items:center;justify-content:center;
+    font-size:0.75rem;color:#fff;
+  }
+  .drawer-logo span{color:var(--volt);}
+  .drawer-close{
+    background:none;border:none;cursor:pointer;
+    color:var(--mid);font-size:1.2rem;padding:6px;
+    border-radius:8px;transition:var(--transition);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .drawer-close:hover{background:var(--paper);color:var(--ink);}
+
+  /* Drawer links */
+  .drawer-nav{
+    padding:16px 16px;display:flex;flex-direction:column;gap:4px;flex:1;
+  }
+  .drawer-nav a{
+    display:flex;align-items:center;gap:12px;
+    padding:13px 16px;border-radius:10px;
+    font-size:0.95rem;font-weight:600;color:var(--slate);
+    transition:var(--transition);border:1px solid transparent;
+  }
+  .drawer-nav a i{
+    width:20px;text-align:center;
+    font-size:0.9rem;color:var(--volt);
+  }
+  .drawer-nav a:hover,
+  .drawer-nav a.active{
+    background:rgba(91,94,244,0.07);
+    border-color:rgba(91,94,244,0.15);
+    color:var(--volt);
+  }
+
+  /* Divider */
+  .drawer-divider{
+    height:1px;background:var(--border);margin:8px 16px;
+  }
+
+  /* Drawer CTA */
+  .drawer-cta{padding:16px 16px 24px;}
+  .drawer-cta a{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;padding:13px 20px;border-radius:12px;
+    font-size:0.9rem;font-weight:700;font-family:'Syne',sans-serif;
+    background:linear-gradient(135deg,var(--volt),var(--volt2));
+    color:#fff;box-shadow:0 4px 16px rgba(91,94,244,0.3);
+    transition:var(--transition);
+  }
+  .drawer-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(91,94,244,0.45);}
 
 /* ─── HERO ─── */
 .hero{
