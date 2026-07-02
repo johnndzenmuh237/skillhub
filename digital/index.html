@@ -680,15 +680,20 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
 </head>
 <body>
 
+
+<!-- ANNOUNCEMENT -->
 <div class="announcement">
   🔥 Get Free AI Prompts + Resources With Every Purchase &nbsp;—&nbsp; <a href="blog.html">Claim Now →</a>
 </div>
 
+<!-- NAVBAR -->
 <nav class="navbar">
   <div class="logo">
     <div class="logo-icon"><i class="fas fa-bolt"></i></div>
     AI <span>Skills</span> Hub
   </div>
+
+  <!-- Desktop links -->
   <ul class="nav-links" id="navLinks">
     <li><a href="index.html">Home</a></li>
     <li><a href="ebooks.html">Ebooks</a></li>
@@ -698,27 +703,45 @@ footer{background:var(--ink2);padding:70px 48px 30px;border-top:1px solid rgba(2
     <li><a href="blog.html">Blog</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+
   <div class="nav-right">
     <a href="blog.html" class="btn-primary"><i class="fas fa-gift"></i>Free Resources</a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-      <i class="fas fa-bars"></i>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+      <i class="fas fa-bars" id="menuIcon"></i>
     </button>
   </div>
 </nav>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Skills Hub</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="aiskillshub-hero.css" />
-</head>
-<body>
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation menu">
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <div class="drawer-logo">
+        <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+        AI <span>Skills</span> Hub
+      </div>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
 
+    <nav class="drawer-nav">
+      <a href="index.html" class="active"><i class="fas fa-house"></i>Home</a>
+      <a href="ebooks.html"><i class="fas fa-book-open"></i>Ebooks</a>
+      <a href="courses.html"><i class="fas fa-graduation-cap"></i>Courses</a>
+      <a href="templates.html"><i class="fas fa-layer-group"></i>Templates</a>
+      <a href="portfolio.html"><i class="fas fa-th-large"></i>Portfolio</a>
+      <a href="blog.html"><i class="fas fa-pen-nib"></i>Blog</a>
+      <a href="contact.html"><i class="fas fa-envelope"></i>Contact</a>
+    </nav>
+
+    <div class="drawer-divider"></div>
+
+    <div class="drawer-cta">
+      <a href="blog.html"><i class="fas fa-gift"></i>Get Free Resources</a>
+    </div>
+  </div>
+</div>
   <!-- ═══ TICKER ═══ -->
   <div class="ticker-wrap">
     <div class="ticker-track">
